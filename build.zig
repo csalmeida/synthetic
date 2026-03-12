@@ -47,7 +47,7 @@ pub fn build(b: *std.Build) void {
     // for actually invoking the compiler.
     const lib = b.addLibrary(.{
         .linkage = .static,
-        .name = "envo",
+        .name = "synthetic",
         .root_module = lib_mod,
     });
 
