@@ -14,7 +14,7 @@ pub const Person = struct {
   emails: StringArray,
   phones: StringArray,
 
-  fn init(allocator: Allocator) !Person {
+  pub fn init(allocator: Allocator) !Person {
     var self: Person = undefined ;
 
     // Assigns allocator required to move unknown email and phone array sizes to the heap.
@@ -38,7 +38,7 @@ pub const Person = struct {
     return self;
   }
 
-  fn deinit(self: *Person) void {
+  pub fn deinit(self: *Person) void {
     self.emails.deinit(self.allocator);
     self.phones.deinit(self.allocator);
   }
